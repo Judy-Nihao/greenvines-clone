@@ -1,0 +1,378 @@
+// nav區塊桌面版
+nav{
+    background-color: grey;
+    position: sticky;
+    width: 100%;
+    z-index: 999;
+}
+
+.wrapper{
+    position: relative;
+    background-image: linear-gradient(to right,$dark_green 50%, $blue);
+    // background-color: $dark_green;
+    padding: 0px 30px;
+    height: 54px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include pad{
+        display: none;
+    }
+}
+
+//navbar 左半邊含logo
+.navbar__left{
+    display: flex;
+
+    @include pad{
+        li{
+            display: none;
+        }
+    }
+
+    .logo{
+        display: flex;
+        align-items: center;
+        text-align: center;
+        width: 120px;
+        margin-right: 45px;
+    } 
+
+    .nav-menu{       
+        display: flex;
+        align-items: center;
+        
+    
+        &__item{
+            padding: 17px 0; 
+            //主選單項目上下 padding 要撐滿 wrapper，才不會造成 hover 觸發期間滑鼠遇到空隙，使得選單觸發短暫失效，形成閃爍
+            // 20+17+17=54
+            font-size: 15px;
+            margin-right: 32px;                            
+            
+            // 所有 a 標籤滑鼠滑過時透明度減半
+            a:hover{
+                opacity: 0.5;
+                transition: all .3s ease-out;
+            }
+
+            @include padBigger{
+                font-size: 14px;
+                margin-right: 15px;
+            }
+        }
+
+        &__item:last-child{
+            margin-right: 0;
+        }
+
+    } 
+}
+
+// dropdown下拉選單設定
+.dropdown-menu{
+    background-color: $middle_green;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    width: 100%;
+    transform: translateY(-16px);   
+    opacity: 0;
+    visibility: hidden;
+    transition: all .4s .1s;
+    // 第一個秒數是 duration 
+    // 第二個秒數是 delay，讓滑鼠 hover 離開後，選單還能再延遲一下下才消失
+    // property name | duration | delay
+
+    display: flex;
+    gap: 70px;
+    height: 455px;
+    padding-top: 50px;
+    padding-left: 300px;
+
+    &__title{
+        color: white;
+        font-size: 18px;
+        font-weight: 400;
+        margin-bottom: 30px;
+    }
+
+    &__item{
+        font-size: 16px;
+        line-height: 32px;
+        margin-bottom: 10px;
+                    
+        a{
+            display: block;
+            // a 變成區塊元素，可使選取下拉選單子項目時，鼠標不用瞄準文字，就可以輕鬆選取到整條
+        }
+    }
+}
+
+// 選單滑過時顯示下拉選單
+.nav-menu__item:hover{
+    .dropdown-menu{
+        transition-delay: 0s;
+        transform: translateY(0px); 
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+// auscentic香氣選單
+.dropdown-menu.scent{
+    background-color: $blue;
+    padding-bottom: 40px;
+
+    .dropdown-menu__title{
+        margin-bottom: 10px;
+    }
+
+    .dropdown-menu__title.title-scent{
+        margin-top: 15px;
+    }
+
+    .dropdown-menu__item{
+        margin-bottom: 4px;
+    }
+    
+    .dropdown-menu__group{
+        padding: 70px 30px;
+        border-left: 1px solid white;
+
+        img{
+            width: 150px;
+            margin-bottom: 20px;
+        }
+
+        p{
+            color: white;
+            font-size: 20px;
+            line-height: 32px; 
+        }
+    }
+}
+
+
+//最新提案選單
+.dropdown-menu.latest{
+    padding: 0px 32px;
+    color: white;
+    justify-content: center;
+    align-items: center;
+
+    .container{
+        max-width: 1280px;
+        margin-bottom: 0;
+    }
+    
+
+    ul.dropdown-menu_latest_list{
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+    }
+
+    li{
+        width: 24%;
+    }
+
+    img{
+        width: 100%;
+        object-fit: cover;
+    }
+
+    div.latest-title{
+        font-weight: 400;
+        font-size: 15px;
+        line-height: 32px;
+        margin-top: 20px;
+    }
+
+    p.latest-text{
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 22px; 
+        text-align: justify;
+        height: 90px;
+    }
+
+    a.latest-btn{  
+        display: block;
+        border: 1px solid #fff;
+        background-color: #3b5647;
+        color: #fff;
+        padding: 5px 0px;
+        width: 136px;
+        font-size: 15px;
+        text-align: center;
+    }
+}
+
+
+// navbar 右半邊：搜尋＋購物車等
+.navbar__right .side-menu{
+    display: flex;
+    align-items: center;
+
+    @include pad{
+        li:not(:last-child){
+            display: none;
+        }
+    }   
+    
+    li:not(:last-child){
+        margin-right: 30px;
+    }
+
+    li{
+        cursor: pointer;
+    }
+
+}
+
+.navbar__right .side-menu .search-area{
+    position: relative;
+    display: flex;    
+}
+
+
+.search-area__search-btn{
+    display: flex;
+    align-items: center;
+    position: relative;
+    // right: 150%;
+    // top: 6px;
+
+    span{
+        color: white;
+        font-size: 12px;
+        letter-spacing: 1px;
+        margin-left: 15px;
+    }
+
+    img{
+        // margin-right: 4px;
+    }
+}
+
+
+.search-area__bar{
+    display: none;
+
+    transform: scale(1);
+    position: absolute;
+    right: 0;
+    top: 6px;
+
+    &-input{
+        background-color: transparent;
+        outline: none;
+        border: none;
+        border-bottom: 1px solid white;
+        width: 200px;
+        padding: 0 6px;
+    }
+
+    &-submit-btn{
+        color: white;
+        border: 1px solid white;
+        background-color: transparent;
+        padding: 3px 18px;
+        position: absolute;
+        right: 0;
+        bottom: 4px;
+        cursor: pointer;
+    }
+}
+
+
+
+.navbar__right .side-menu .member{
+        position: relative;
+
+        img{
+            width: 22px;
+        }
+        
+        &:hover img{
+            opacity: 0.5;
+        }
+
+        // 滑過 member人物icon就觸發 dropdown 顯現
+        &:hover .member__dropdown{
+            top: 52px;
+            opacity: 1;
+            visibility: visible;
+            transition-delay: 0;
+        }
+
+    .member__dropdown{
+        background-color: $light_green;
+        position: absolute;
+        width: 170px; 
+        top: 20px;
+        left: -75px;
+        opacity: 0;
+        visibility: hidden;
+        transition: all .25s .15s;
+        // property name | duration | delay
+
+        &::after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border: 12px solid transparent;
+            border-bottom-color: $middle_green;
+            border-top: 0;
+            margin-left: -12px;
+            margin-top: -12px;
+        }
+        
+        a{
+            text-align: center;
+            display: block;
+            padding: 10px 0px 12px;
+        }
+
+
+    }
+}
+
+.navbar__right .side-menu .currency{
+
+    .currency__link{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-top: 3px;
+    }
+
+    .currency__icon{
+        max-width: 25px;
+    }
+    span{
+        font-size: 12px;    
+    }
+}
+
+.navbar__right .side-menu .cart{
+    position: relative;
+    .cart__count{
+        position: absolute;
+        top: -10px;
+        right: -12px;
+        background-color: #C84601;
+        text-align: center;
+        width: 18px;
+        height: 18px;
+        border-radius: 50%;
+        font-size: 12px;
+    }
+}

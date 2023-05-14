@@ -1,0 +1,13 @@
+// RWD斷點
+
+@mixin padBigger{
+    @media(max-width:1280px){
+        @content;
+      }   
+}
+
+@mixin pad{
+    @media(max-width:1080px){
+      @content;
+    }
+}

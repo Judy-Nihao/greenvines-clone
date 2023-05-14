@@ -1,0 +1,625 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+body {
+  height: 250vh;
+}
+
+a {
+  color: #fff;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  vertical-align: top;
+}
+
+.menu-mobile {
+  background-color: red;
+  background-image: linear-gradient(to right, #012D18 50%, #6CB4BD);
+  position: sticky;
+  width: 100%;
+  z-index: 999;
+  display: none;
+}
+@media (max-width: 1080px) {
+  .menu-mobile {
+    display: block;
+  }
+}
+
+.menu-mobile-header-container {
+  position: relative;
+  padding: 0px 30px;
+  height: 54px;
+  margin: 0 auto;
+  padding: 0 25px;
+}
+
+.menu-mobile-header {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu-mobile-header .menu-mobile-header__btn {
+  width: 25px;
+  height: 25px;
+  background-color: transparent;
+  border: none;
+  fill: white;
+  cursor: pointer;
+}
+.menu-mobile-header .logo-and-cart {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu-mobile-header .logo {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 120px;
+  margin-left: 15px;
+}
+.menu-mobile-header .cart {
+  position: relative;
+}
+.menu-mobile-header .cart .cart__count {
+  position: absolute;
+  top: -10px;
+  right: -12px;
+  background-color: #C84601;
+  text-align: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  font-size: 12px;
+}
+
+.menu-mobile-main.active {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(0px);
+}
+
+.menu-mobile-main {
+  visibility: hidden;
+  opacity: 0.5;
+  transform: translateX(-50px);
+  transition: all 0.3s ease-in;
+  position: fixed;
+  width: 100%;
+  top: 54px;
+  bottom: 0;
+  background-color: #012D18;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 20px;
+  line-height: 36px;
+}
+.menu-mobile-main li {
+  padding: 15px 25px;
+}
+.menu-mobile-main a {
+  display: block;
+}
+
+.menu-mobile-main__footer .login {
+  background-color: #9CABA2;
+}
+.menu-mobile-main__footer .search {
+  background-color: #3B5647;
+}
+
+.menu-mobile-main__footer__item a {
+  display: flex;
+  align-items: center;
+}
+.menu-mobile-main__footer__item a img {
+  width: 24px;
+  height: 24px;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin-right: 20px;
+}
+
+nav {
+  background-color: grey;
+  position: sticky;
+  width: 100%;
+  z-index: 999;
+}
+
+.wrapper {
+  position: relative;
+  background-image: linear-gradient(to right, #012D18 50%, #6CB4BD);
+  padding: 0px 30px;
+  height: 54px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@media (max-width: 1080px) {
+  .wrapper {
+    display: none;
+  }
+}
+
+.navbar__left {
+  display: flex;
+}
+@media (max-width: 1080px) {
+  .navbar__left li {
+    display: none;
+  }
+}
+.navbar__left .logo {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 120px;
+  margin-right: 45px;
+}
+.navbar__left .nav-menu {
+  display: flex;
+  align-items: center;
+}
+.navbar__left .nav-menu__item {
+  padding: 17px 0;
+  font-size: 15px;
+  margin-right: 32px;
+}
+.navbar__left .nav-menu__item a:hover {
+  opacity: 0.5;
+  transition: all 0.3s ease-out;
+}
+@media (max-width: 1280px) {
+  .navbar__left .nav-menu__item {
+    font-size: 14px;
+    margin-right: 15px;
+  }
+}
+.navbar__left .nav-menu__item:last-child {
+  margin-right: 0;
+}
+
+.dropdown-menu {
+  background-color: #3B5647;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  width: 100%;
+  transform: translateY(-16px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s 0.1s;
+  display: flex;
+  gap: 70px;
+  height: 455px;
+  padding-top: 50px;
+  padding-left: 300px;
+}
+.dropdown-menu__title {
+  color: white;
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+.dropdown-menu__item {
+  font-size: 16px;
+  line-height: 32px;
+  margin-bottom: 10px;
+}
+.dropdown-menu__item a {
+  display: block;
+}
+
+.nav-menu__item:hover .dropdown-menu {
+  transition-delay: 0s;
+  transform: translateY(0px);
+  opacity: 1;
+  visibility: visible;
+}
+
+.dropdown-menu.scent {
+  background-color: #6CB4BD;
+  padding-bottom: 40px;
+}
+.dropdown-menu.scent .dropdown-menu__title {
+  margin-bottom: 10px;
+}
+.dropdown-menu.scent .dropdown-menu__title.title-scent {
+  margin-top: 15px;
+}
+.dropdown-menu.scent .dropdown-menu__item {
+  margin-bottom: 4px;
+}
+.dropdown-menu.scent .dropdown-menu__group {
+  padding: 70px 30px;
+  border-left: 1px solid white;
+}
+.dropdown-menu.scent .dropdown-menu__group img {
+  width: 150px;
+  margin-bottom: 20px;
+}
+.dropdown-menu.scent .dropdown-menu__group p {
+  color: white;
+  font-size: 20px;
+  line-height: 32px;
+}
+
+.dropdown-menu.latest {
+  padding: 0px 32px;
+  color: white;
+  justify-content: center;
+  align-items: center;
+}
+.dropdown-menu.latest .container {
+  max-width: 1280px;
+  margin-bottom: 0;
+}
+.dropdown-menu.latest ul.dropdown-menu_latest_list {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+.dropdown-menu.latest li {
+  width: 24%;
+}
+.dropdown-menu.latest img {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.dropdown-menu.latest div.latest-title {
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 32px;
+  margin-top: 20px;
+}
+.dropdown-menu.latest p.latest-text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: justify;
+  height: 90px;
+}
+.dropdown-menu.latest a.latest-btn {
+  display: block;
+  border: 1px solid #fff;
+  background-color: #3b5647;
+  color: #fff;
+  padding: 5px 0px;
+  width: 136px;
+  font-size: 15px;
+  text-align: center;
+}
+
+.navbar__right .side-menu {
+  display: flex;
+  align-items: center;
+}
+@media (max-width: 1080px) {
+  .navbar__right .side-menu li:not(:last-child) {
+    display: none;
+  }
+}
+.navbar__right .side-menu li:not(:last-child) {
+  margin-right: 30px;
+}
+.navbar__right .side-menu li {
+  cursor: pointer;
+}
+
+.navbar__right .side-menu .search-area {
+  position: relative;
+  display: flex;
+}
+
+.search-area__search-btn {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.search-area__search-btn span {
+  color: white;
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin-left: 15px;
+}
+.search-area__bar {
+  display: none;
+  transform: scale(1);
+  position: absolute;
+  right: 0;
+  top: 6px;
+}
+.search-area__bar-input {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid white;
+  width: 200px;
+  padding: 0 6px;
+}
+.search-area__bar-submit-btn {
+  color: white;
+  border: 1px solid white;
+  background-color: transparent;
+  padding: 3px 18px;
+  position: absolute;
+  right: 0;
+  bottom: 4px;
+  cursor: pointer;
+}
+
+.navbar__right .side-menu .member {
+  position: relative;
+}
+.navbar__right .side-menu .member img {
+  width: 22px;
+}
+.navbar__right .side-menu .member:hover img {
+  opacity: 0.5;
+}
+.navbar__right .side-menu .member:hover .member__dropdown {
+  top: 52px;
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0;
+}
+.navbar__right .side-menu .member .member__dropdown {
+  background-color: #426150;
+  position: absolute;
+  width: 170px;
+  top: 20px;
+  left: -75px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.25s 0.15s;
+}
+.navbar__right .side-menu .member .member__dropdown::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border: 12px solid transparent;
+  border-bottom-color: #3B5647;
+  border-top: 0;
+  margin-left: -12px;
+  margin-top: -12px;
+}
+.navbar__right .side-menu .member .member__dropdown a {
+  text-align: center;
+  display: block;
+  padding: 10px 0px 12px;
+}
+
+.navbar__right .side-menu .currency .currency__link {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3px;
+}
+.navbar__right .side-menu .currency .currency__icon {
+  max-width: 25px;
+}
+.navbar__right .side-menu .currency span {
+  font-size: 12px;
+}
+
+.navbar__right .side-menu .cart {
+  position: relative;
+}
+.navbar__right .side-menu .cart .cart__count {
+  position: absolute;
+  top: -10px;
+  right: -12px;
+  background-color: #C84601;
+  text-align: center;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  font-size: 12px;
+}
+
+.breadcrumb {
+  background-color: #426150;
+  color: white;
+  line-height: 1;
+  padding: 0px 30px;
+  font-weight: 300;
+  font-size: 14px;
+}
+@media (max-width: 1080px) {
+  .breadcrumb {
+    display: none;
+  }
+}
+.breadcrumb__list {
+  display: flex;
+}
+.breadcrumb__item a {
+  position: relative;
+  display: flex;
+  padding: 10px;
+}
+.breadcrumb__item:first-child a {
+  padding-left: 0;
+}
+.breadcrumb a:hover {
+  opacity: 0.5;
+  transition: all 0.3s ease-out;
+}
+.breadcrumb img {
+  width: 10px;
+  position: absolute;
+  left: 0;
+  top: 47%;
+  transform: translateY(-35%);
+}
+.breadcrumb span {
+  margin-left: 10px;
+}
+
+.container-product {
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+}
+
+/* 父層 */
+.product-img {
+  width: 50%;
+  max-width: 735px;
+  /* 容器小於 735px 時，寬度等於 body 50% 或是說等於 視窗的一半寬度，當容器寬度大於等於 600px時，寬度採用 735px。   */
+  /* 如果沒有設 max-width ，當視窗拉到很寬時，product-img父層 和 子層 photos 之間會有空隙產生
+     因為子層 img 原始寬度就只有 735px，而 product-img 又是被 img 的寬度給撐出來的，圖片最寬也無法等同於一半body寬
+     寬度差造成的空隙就會出現。       
+  */
+  /*  用flex 讓 bottle 水平置中於父層 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+/* 子層 */
+.photos {
+  margin-top: 100px;
+  /*   outline: 2px solid blue; */
+}
+
+/* 子層 */
+.bottle {
+  position: sticky;
+  width: 25%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* sticky 和 fixed 最大差異是，fixed 是固定於整個視窗，但是 sticky 是固定於父層。
+sitcky 的元素只黏在父層容器內，一旦視窗往下滑動，父層也滑到看不見時，sticky元素也會跟著父層一起滑走。 */
+p.test {
+  padding: 16px;
+  background-color: white;
+}
+
+/* 產品介紹文字 */
+.product__info {
+  padding: 40px;
+  width: 50%;
+}
+
+.product__title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product__name {
+  color: #6db4bb;
+  font-size: 30px;
+  font-weight: 500;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.product__aromaTag {
+  display: inline-block;
+  padding: 5px;
+  color: #6db4bb;
+  border: 1px solid #6db4bb;
+}
+
+.product__slogan {
+  font-size: 30px;
+  font-weight: 100;
+  margin-bottom: 10px;
+}
+
+.product__price {
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.product__description {
+  border-top: 4px solid #353535;
+  padding-top: 20px;
+  font-weight: 200;
+  margin-bottom: 30px;
+}
+
+.product__review {
+  color: #6db4bb;
+  margin-bottom: 20px;
+}
+
+.shop {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.quantity {
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #D2C8B1;
+  font-weight: 500;
+}
+
+.minus, .add {
+  text-align: center;
+  padding: 0 6px;
+}
+
+.num {
+  padding: 28px 30px;
+}
+
+.addToCart {
+  width: 50%;
+  font-size: 20px;
+  padding: 25px 20px;
+  text-align: center;
+  background-color: #E67600;
+  color: #fff;
+}
+
+.news {
+  position: fixed;
+  right: 0;
+  bottom: 120px;
+  padding: 10px;
+  background-color: #C84600;
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+}/*# sourceMappingURL=style.css.map */

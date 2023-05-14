@@ -1,0 +1,45 @@
+// 麵包屑路徑頁籤
+.breadcrumb{
+    @include pad{
+        display: none;
+    }
+
+    background-color: $light_green;
+    color: white;
+    line-height: 1;
+    padding: 0px 30px;
+    font-weight: 300;
+    font-size: 14px;
+   
+    &__list{
+        display: flex;
+    }
+
+    &__item a{
+        position: relative;
+        display: flex;
+        padding: 10px;
+    }
+
+    &__item:first-child a{
+        padding-left: 0;
+    }
+
+    a:hover{
+        opacity: 0.5;
+        transition: all .3s ease-out;
+    }
+
+    img{
+        width: 10px;
+        position: absolute;
+        left: 0 ;
+        top: 47%;
+        transform: translateY(-35%);
+    }
+
+    span{
+        margin-left: 10px;
+    }
+    
+}

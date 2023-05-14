@@ -1,0 +1,27 @@
+// 基礎共通樣式
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans TC', sans-serif;
+    // outline: 1px solid red;
+}
+ 
+body{
+    height: 250vh;
+}
+
+a{
+    color: #fff;
+    text-decoration: none;
+}
+
+ul{
+    list-style: none;
+}
+ 
+img{
+    max-width: 100%;
+    vertical-align: top;
+}
+

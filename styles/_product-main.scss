@@ -1,0 +1,148 @@
+//護膚蜜產品
+
+.container-product{
+    // max-width: 1280px;
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+  }
+  /* 父層 */
+  .product-img{
+    width: 50%;
+    max-width: 735px;
+    /* 容器小於 735px 時，寬度等於 body 50% 或是說等於 視窗的一半寬度，當容器寬度大於等於 600px時，寬度採用 735px。   */
+    /* 如果沒有設 max-width ，當視窗拉到很寬時，product-img父層 和 子層 photos 之間會有空隙產生
+       因為子層 img 原始寬度就只有 735px，而 product-img 又是被 img 的寬度給撐出來的，圖片最寬也無法等同於一半body寬
+       寬度差造成的空隙就會出現。       
+    */
+
+    /*  用flex 讓 bottle 水平置中於父層 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+  }
+  
+  /* 子層 */
+  .photos{
+    margin-top: $marginTop;
+  /*   outline: 2px solid blue; */
+  }
+  
+  /* 子層 */
+  .bottle{
+      position: sticky;
+      width: 25%;
+      object-fit: contain;
+      top: 50%;
+      transform: translateY(-50%);
+  }
+  
+  /* sticky 和 fixed 最大差異是，fixed 是固定於整個視窗，但是 sticky 是固定於父層。
+  sitcky 的元素只黏在父層容器內，一旦視窗往下滑動，父層也滑到看不見時，sticky元素也會跟著父層一起滑走。 */
+  
+  
+  p.test{
+    padding: 16px;
+    background-color: white;
+  }
+  
+  
+  /* 產品介紹文字 */ 
+  .product__info{
+    padding: 40px;
+    width: 50%;
+  }
+  
+  .product__title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .product__name{
+    color: #6db4bb;
+    font-size: 30px;
+    font-weight: 500;
+    padding-top: 10px;
+    padding-bottom: 20px;
+  }
+  
+  .product__aromaTag{
+    display: inline-block;
+    padding: 5px;
+    color: #6db4bb;
+    border: 1px solid #6db4bb;
+    
+  }
+  
+  .product__slogan{
+    font-size: 30px;
+    font-weight: 100;
+    margin-bottom: 10px;
+  }
+  
+  .product__price{
+    font-size: 24px;
+    font-weight: 400;
+    margin-bottom: 20px;
+  }
+  
+  .product__description{
+    border-top: 4px solid #353535;
+    padding-top: 20px;
+    font-weight: 200;
+    margin-bottom: 30px;
+  }
+  
+  .product__review{
+    color: #6db4bb;
+    margin-bottom: 20px;
+  }
+  
+  .shop{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .quantity{
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #D2C8B1;
+    font-weight: 500;
+  }
+  
+  .minus, .add{
+    text-align: center;
+    padding: 0 6px;
+  }
+  
+  .num{
+    padding: 28px 30px; 
+  }
+  
+  .addToCart{
+    width: 50%;
+    font-size: 20px;
+    padding: 25px 20px;
+    text-align: center;
+    background-color: #E67600;
+    color: #fff;
+  }
+  
+  
+  .news{
+    position: fixed;
+    right: 0;
+    bottom: 120px;
+    padding: 10px;
+    background-color: #C84600;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+  }
