@@ -1,47 +1,49 @@
 //護膚蜜產品
 
 .container-product{
-    // max-width: 1280px;
-    max-width: 100%;
+    position: relative;
+    width: 100%;
+    max-width: 1920px;
     margin: 0 auto;
     display: flex;
-  }
+    line-height: 1.5;
+}
+  
   /* 父層 */
-  .product-img{
+.product-img{
+    background-color: aquamarine;
     width: 50%;
-    max-width: 735px;
-    /* 容器小於 735px 時，寬度等於 body 50% 或是說等於 視窗的一半寬度，當容器寬度大於等於 600px時，寬度採用 735px。   */
-    /* 如果沒有設 max-width ，當視窗拉到很寬時，product-img父層 和 子層 photos 之間會有空隙產生
-       因為子層 img 原始寬度就只有 735px，而 product-img 又是被 img 的寬度給撐出來的，圖片最寬也無法等同於一半body寬
-       寬度差造成的空隙就會出現。       
-    */
-
-    /*  用flex 讓 bottle 水平置中於父層 */
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
 
-  }
-  
-  /* 子層 */
-  .photos{
-    margin-top: $marginTop;
-  /*   outline: 2px solid blue; */
-  }
-  
-  /* 子層 */
-  .bottle{
+    /* 子層 */
+    .bottle{
       position: sticky;
       width: 25%;
       object-fit: contain;
       top: 50%;
       transform: translateY(-50%);
   }
+
+    /* 子層 */
+    .photos{
+      width: 100%;
+      //這裡100%很重要，這樣.photos整條相片，才能跟著吃到上一層.product-img的50%，最終撐滿.container-product的一半寬度。
+      margin-top: $marginTop;
+    }
+
+    img{
+      width: 100%;
+      // 圖片本身100%也很重要，因為圖片實際寬度是 735px，視窗拉大後若要繼續保持 .container-product 的一半(1920px/2=960px)，
+      // 圖片必須被強制等比例拉寬，所以要強制寬度 100%去填滿，不然會有空隙。
+      // 當視窗縮小時，則是去吃基礎設定中的 max-width: 100%，配合縮小。
+    }
+    
+}
   
-  /* sticky 和 fixed 最大差異是，fixed 是固定於整個視窗，但是 sticky 是固定於父層。
-  sitcky 的元素只黏在父層容器內，一旦視窗往下滑動，父層也滑到看不見時，sticky元素也會跟著父層一起滑走。 */
-  
+
   
   p.test{
     padding: 16px;
@@ -49,10 +51,18 @@
   }
   
   
-  /* 產品介紹文字 */ 
-  .product__info{
+  .sticky-wrap{
+    position: relative;
     padding: 40px;
     width: 50%;
+  }
+
+  /* 產品介紹文字 */ 
+  .product__info{
+    position: sticky;
+    top: 0;
+    // padding: 40px;
+    // width: 50%;
   }
   
   .product__title{
