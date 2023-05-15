@@ -1,15 +1,16 @@
 //護膚蜜產品
 
+// 產品內容外層容器
 .container-product{
     position: relative;
     width: 100%;
     max-width: 1920px;
     margin: 0 auto;
     display: flex;
-    line-height: 1.5;
 }
+
+ /* 產品圖片區 */   
   
-  /* 父層 */
 .product-img{
     background-color: aquamarine;
     width: 50%;
@@ -18,7 +19,7 @@
     align-items: center;
     justify-content: flex-start;
 
-    /* 子層 */
+    
     .bottle{
       position: sticky;
       width: 25%;
@@ -27,7 +28,6 @@
       transform: translateY(-50%);
   }
 
-    /* 子層 */
     .photos{
       width: 100%;
       //這裡100%很重要，這樣.photos整條相片，才能跟著吃到上一層.product-img的50%，最終撐滿.container-product的一半寬度。
@@ -43,116 +43,187 @@
     
 }
   
+  // p.test{
+  //   padding: 16px;
+  //   background-color: white;
+  // }
+  
 
-  
-  p.test{
-    padding: 16px;
-    background-color: white;
-  }
-  
-  
-  .sticky-wrap{
+ /* 產品文字區 */ 
+.sticky-wrap{
     position: relative;
     padding: 40px;
     width: 50%;
   }
 
-  /* 產品介紹文字 */ 
-  .product__info{
-    position: sticky;
-    top: 0;
-    // padding: 40px;
-    // width: 50%;
-  }
+
+.product__info{
+  position: sticky;
+  top: 0;
+}
+
+.product__title{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  line-height: 1.5;
+}
+
+.product__name{
+  color: #6db4bb;
+  font-size: 30px;
+  font-weight: 500;
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+
+.product__aromaTag{
+  display: inline-block;
+  padding: 5px;
+  color: #6db4bb;
+  border: 1px solid #6db4bb;
   
-  .product__title{
+}
+
+.product__slogan{
+  font-size: 30px;
+  font-weight: 100;
+  margin-bottom: 10px;
+}
+
+.product__price{
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.product__description{
+  border-top: 4px solid #353535;
+  padding-top: 20px;
+  font-weight: 200;
+  margin-bottom: 30px;
+  line-height: 1.75;
+}
+
+.product__review{
+  color: #6db4bb;
+  margin-bottom: 20px;
+}
+
+.shop{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.quantity{
+  width: 50%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #D2C8B1;
+  font-weight: 500;
+}
+
+.minus, .add{
+  text-align: center;
+  padding: 0 6px;
+}
+
+.num{
+  padding: 28px 30px; 
+}
+
+.addToCart{
+  width: 50%;
+  font-size: 20px;
+  padding: 25px 20px;
+  text-align: center;
+  background-color: #E67600;
+  color: #fff;
+}
+
+.text-promo{ 
+  margin: 40px 0;
+  a{
+    color: #e67600;
+    text-decoration: underline;
+  }
+}
+
+// 產品成份說明
+.product__ingredients{
+  font-weight: 100;
+  color: #333333;
+  line-height: 1.75;
+
+  input[type="radio"]{
+    display: none;
+  }
+
+  label{
+    position: relative;
     display: flex;
-    align-items: center;
     justify-content: space-between;
-  }
-  
-  .product__name{
-    color: #6db4bb;
-    font-size: 30px;
-    font-weight: 500;
-    padding-top: 10px;
-    padding-bottom: 20px;
-  }
-  
-  .product__aromaTag{
-    display: inline-block;
-    padding: 5px;
-    color: #6db4bb;
-    border: 1px solid #6db4bb;
-    
-  }
-  
-  .product__slogan{
-    font-size: 30px;
-    font-weight: 100;
-    margin-bottom: 10px;
-  }
-  
-  .product__price{
-    font-size: 24px;
-    font-weight: 400;
-    margin-bottom: 20px;
-  }
-  
-  .product__description{
-    border-top: 4px solid #353535;
-    padding-top: 20px;
-    font-weight: 200;
-    margin-bottom: 30px;
-  }
-  
-  .product__review{
-    color: #6db4bb;
-    margin-bottom: 20px;
-  }
-  
-  .shop{
-    width: 100%;
-    display: flex;
     align-items: center;
-    justify-content: space-between;
-  }
-  
-  .quantity{
-    width: 50%;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    background-color: #D2C8B1;
-    font-weight: 500;
-  }
-  
-  .minus, .add{
-    text-align: center;
-    padding: 0 6px;
-  }
-  
-  .num{
-    padding: 28px 30px; 
-  }
-  
-  .addToCart{
-    width: 50%;
     font-size: 20px;
-    padding: 25px 20px;
-    text-align: center;
-    background-color: #E67600;
-    color: #fff;
+    border-bottom: 1px solid #353535;
+    cursor: pointer;
   }
-  
-  
-  .news{
-    position: fixed;
-    right: 0;
-    bottom: 120px;
-    padding: 10px;
-    background-color: #C84600;
+
+  label::after{
+    content: "+";
+    transform: translateX(-10px) scaleX(1.15);
+    font-size: 36px;
+    font-weight: 100;
+    color: $blue;
+  }
+
+  &__body{
+    padding: 0 15px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s linear, padding 0.4s linear;
+
+    p:first-child{
+      margin-bottom: 20px;
+    }
+  }
+
+  input[type="radio"]:checked + label + .product__ingredients__body{
+    max-height: 400px;
+    padding: 20px 15px;
+    border-bottom: 1px solid #353535;
+  }
+
+  input[type="radio"]:checked + label::after{
+    content: "-";
+    transform: translateX(-12px) scaleX(2);
+  }
+
+  ul{
+    list-style: disc;
+    padding-left: 20px;
+    margin-bottom: 20px;
+  }
+
+  .note{
     font-size: 14px;
-    color: #fff;
-    text-align: center;
   }
+}
+
+.news{
+  position: fixed;
+  right: 0;
+  bottom: 120px;
+  padding: 10px;
+  background-color: #C84600;
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+}
+
+
+  
+  
