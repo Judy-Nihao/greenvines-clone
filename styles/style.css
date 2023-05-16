@@ -13,6 +13,10 @@ body {
   background-color: #D8D4CD;
 }
 
+.no-scroll {
+  overflow-y: hidden;
+}
+
 a {
   color: #fff;
   text-decoration: none;
@@ -611,6 +615,7 @@ nav {
   justify-content: space-evenly;
   align-items: center;
   background-color: #D2C8B1;
+  color: #353535;
   font-weight: 500;
 }
 
@@ -720,7 +725,7 @@ nav {
 .section__middle__first .tree {
   position: absolute;
   left: 0;
-  top: 50%;
+  top: 45%;
   max-width: 1920px;
 }
 
@@ -869,6 +874,11 @@ nav {
   font-weight: 100;
   padding: 80px 0;
 }
+@media (max-width: 1080px) {
+  .section__middle__fifth {
+    padding: 0;
+  }
+}
 .section__middle__fifth h3 {
   font-size: 26px;
   font-weight: 500;
@@ -878,20 +888,27 @@ nav {
   font-size: 20px;
   font-weight: 100;
 }
-.section__middle__fifth .data-circle {
+
+.data-circle {
   display: flex;
   justify-content: space-between;
   max-width: 50%;
   margin: 0 auto;
   padding: 60px 0px;
 }
-.section__middle__fifth .data-circle p {
+@media (max-width: 1080px) {
+  .data-circle {
+    max-width: 100%;
+    flex-direction: column;
+    padding-bottom: 0;
+  }
+}
+.data-circle p {
   margin-top: 20px;
 }
 @media (max-width: 1080px) {
-  .section__middle__fifth .data-circle {
-    max-width: 75%;
-    padding: 60px 0px;
+  .data-circle p {
+    margin-bottom: 45px;
   }
 }
 

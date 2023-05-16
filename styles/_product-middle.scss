@@ -32,7 +32,7 @@
     .tree{
       position: absolute;
       left: 0;
-      top: 50%;
+      top: 45%;
       max-width: 1920px;
   
     }
@@ -40,7 +40,7 @@
   }
   
   // 淺藍色活性精華時代
-  .section__middle__second{
+.section__middle__second{
     padding: 200px 120px;
   
     @include pad{
@@ -70,7 +70,7 @@
   }
   
   // 石頭
-  .section__middle__third{
+.section__middle__third{
     position: relative;
   
     .rock{
@@ -140,7 +140,7 @@
   
   
   // 手肘
-  .section__middle__fourth{
+.section__middle__fourth{
     .container{
       display: flex;
       background-color: #d2c8b1;
@@ -199,12 +199,16 @@
   }
   
   // 科學實測
-  .section__middle__fifth{
+.section__middle__fifth{
     background-color: #d2c8b1;
     color: #353535;
     text-align: center;
     font-weight: 100;
     padding: 80px 0;
+
+    @include pad{
+      padding: 0;
+     }
   
     h3{
       font-size: 26px;
@@ -216,33 +220,43 @@
       font-size: 20px;
       font-weight: 100;
     }
-  
-    .data-circle{
-      display: flex;
-      justify-content: space-between;
-      max-width: 50%;
-      margin: 0 auto;
-      padding: 60px 0px;
-  
-      p{
-        margin-top: 20px;
-      }
-  
-      @include pad{
-        max-width: 75%;
-        padding: 60px 0px;
-       }
+}
+
+//科學實測內的數據圈圈圖
+.data-circle{
+  display: flex;
+  justify-content: space-between;
+  max-width: 50%;
+  margin: 0 auto;
+  padding: 60px 0px;
+
+  @include pad{
+    max-width: 100%;
+    flex-direction: column;
+    padding-bottom: 0;
+   }
+
+  p{
+    margin-top: 20px;
+    @include pad{
+    margin-bottom: 45px;
     }
   }
+
+}
   
-  .section__footer__bg{
+
+
+.section__footer__bg{
     background-color: #d2c8b1;
   
     img{
       width: 100%;
     }
   }
-  .news{
+
+  
+.news{
     position: fixed;
     right: 0;
     bottom: 120px;

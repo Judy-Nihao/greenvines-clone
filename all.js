@@ -10,6 +10,9 @@ menuMobileBtn.addEventListener("click", ()=>{
     }else{
         menuMobileMain.classList.add("active");
     }
+
+    document.body.classList.toggle('no-scroll');
+
 })
 
 
