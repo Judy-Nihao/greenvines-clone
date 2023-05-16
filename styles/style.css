@@ -27,6 +27,13 @@ img {
   vertical-align: top;
 }
 
+.container {
+  max-width: 1920px;
+  width: 100%;
+  padding: 0;
+  margin: 0 atuo;
+}
+
 .menu-mobile {
   background-color: red;
   background-image: linear-gradient(to right, #012D18 50%, #6CB4BD);
@@ -492,19 +499,29 @@ nav {
   margin: 0 auto;
   display: flex;
 }
+@media (max-width: 768px) {
+  .container-product {
+    flex-direction: column;
+  }
+}
 
 /* 產品圖片區 */
 .product-img {
-  background-color: aquamarine;
   width: 50%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  background-color: #D2C8B1;
+}
+@media (max-width: 768px) {
+  .product-img {
+    width: 100%;
+  }
 }
 .product-img .bottle {
   position: sticky;
-  width: 25%;
+  width: 175px;
   -o-object-fit: contain;
      object-fit: contain;
   top: 50%;
@@ -523,6 +540,11 @@ nav {
   position: relative;
   padding: 40px;
   width: 50%;
+}
+@media (max-width: 768px) {
+  .sticky-wrap {
+    width: 100%;
+  }
 }
 
 .product__info {
@@ -545,7 +567,7 @@ nav {
   padding-bottom: 20px;
 }
 
-.product__aromaTag {
+.aromaTag {
   display: inline-block;
   padding: 5px;
   color: #6db4bb;
@@ -668,6 +690,217 @@ nav {
 }
 .product__ingredients .note {
   font-size: 14px;
+}
+
+.section__middle__first {
+  position: relative;
+  background-image: url("https://cdn.greenvines.com.tw/shopline/auscentic/product-page/auscentic-body-serum-awakening-grace/a-kv.png");
+  background-size: cover;
+  margin-top: 300px;
+  padding: 160px 0px;
+}
+.section__middle__first .leaves {
+  position: absolute;
+  right: 0;
+  top: -200px;
+  width: 750px;
+}
+.section__middle__first .middle-text {
+  font-size: 38px;
+  font-weight: 100;
+  width: 50%;
+  margin: 0 auto;
+}
+.section__middle__first .middle-text p:nth-child(2) {
+  font-weight: 400;
+}
+.section__middle__first .middle-text p:nth-child(3) {
+  font-size: 24px;
+  font-weight: 400;
+}
+.section__middle__first .tree {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  max-width: 1920px;
+}
+
+.section__middle__second {
+  padding: 200px 120px;
+}
+@media (max-width: 1080px) {
+  .section__middle__second {
+    padding: 100px 60px;
+  }
+}
+.section__middle__second .container {
+  max-width: 1400px;
+  margin: 0 auto;
+  background-color: #6CB4BD;
+  padding: 50px;
+  color: white;
+  text-align: center;
+}
+.section__middle__second h3 {
+  font-size: 24px;
+  font-weight: 400;
+}
+.section__middle__second p {
+  margin-top: 20px;
+  font-size: 16px;
+  font-weight: 100;
+  line-height: 28px;
+}
+
+.section__middle__third {
+  position: relative;
+}
+.section__middle__third .rock {
+  position: absolute;
+  left: 0;
+  top: -215px;
+}
+.section__middle__third .container {
+  display: flex;
+  margin: 0 auto;
+}
+@media (max-width: 1080px) {
+  .section__middle__third .container {
+    flex-direction: column;
+  }
+}
+.section__middle__third .description {
+  width: 50%;
+  color: #353535;
+  padding: 120px 60px;
+}
+@media (max-width: 1080px) {
+  .section__middle__third .description {
+    width: 100%;
+  }
+}
+.section__middle__third .description h3 {
+  font-size: 26px;
+  font-weight: 100;
+}
+.section__middle__third .description h5 {
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: 500;
+}
+.section__middle__third .description p {
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 100;
+}
+.section__middle__third .description .title-bottombar {
+  border-bottom: 1px solid #353535;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+.section__middle__third .image {
+  background-image: url("https://cdn.greenvines.com.tw/shopline/auscentic/product-page/auscentic-body-serum-awakening-grace/a-s3-p1.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 50%;
+}
+@media (max-width: 1080px) {
+  .section__middle__third .image {
+    width: 100%;
+    min-height: 500px;
+  }
+}
+
+.section__middle__fourth .container {
+  display: flex;
+  background-color: #d2c8b1;
+  margin: 0 auto;
+}
+@media (max-width: 1080px) {
+  .section__middle__fourth .container {
+    flex-direction: column;
+  }
+}
+.section__middle__fourth .image {
+  background-image: url("https://cdn.greenvines.com.tw/shopline/auscentic/product-page/auscentic-body-serum-awakening-grace/a-s3-p2.png");
+  background-size: cover;
+  background-position: center;
+  width: 50%;
+}
+@media (max-width: 1080px) {
+  .section__middle__fourth .image {
+    width: 100%;
+    min-height: 500px;
+  }
+}
+.section__middle__fourth .description {
+  width: 50%;
+  color: #353535;
+  padding: 120px 60px;
+}
+@media (max-width: 1080px) {
+  .section__middle__fourth .description {
+    width: 100%;
+  }
+}
+.section__middle__fourth h3 {
+  font-size: 26px;
+  font-weight: 100;
+}
+.section__middle__fourth h5 {
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: 500;
+}
+.section__middle__fourth p {
+  font-size: 16px;
+  line-height: 28px;
+  font-weight: 100;
+}
+.section__middle__fourth .title-bottombar {
+  border-bottom: 1px solid #353535;
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.section__middle__fifth {
+  background-color: #d2c8b1;
+  color: #353535;
+  text-align: center;
+  font-weight: 100;
+  padding: 80px 0;
+}
+.section__middle__fifth h3 {
+  font-size: 26px;
+  font-weight: 500;
+}
+.section__middle__fifth h5 {
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: 100;
+}
+.section__middle__fifth .data-circle {
+  display: flex;
+  justify-content: space-between;
+  max-width: 50%;
+  margin: 0 auto;
+  padding: 60px 0px;
+}
+.section__middle__fifth .data-circle p {
+  margin-top: 20px;
+}
+@media (max-width: 1080px) {
+  .section__middle__fifth .data-circle {
+    max-width: 75%;
+    padding: 60px 0px;
+  }
+}
+
+.section__footer__bg {
+  background-color: #d2c8b1;
+}
+.section__footer__bg img {
+  width: 100%;
 }
 
 .news {

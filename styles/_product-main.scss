@@ -7,22 +7,30 @@
     max-width: 1920px;
     margin: 0 auto;
     display: flex;
+
+    @include mobile{
+      flex-direction: column;
+    }
 }
 
  /* 產品圖片區 */   
   
 .product-img{
-    background-color: aquamarine;
     width: 50%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    background-color: #D2C8B1;
+
+    @include mobile{
+      width: 100%;
+    }
 
     
     .bottle{
       position: sticky;
-      width: 25%;
+      width: 175px;
       object-fit: contain;
       top: 50%;
       transform: translateY(-50%);
@@ -43,17 +51,15 @@
     
 }
   
-  // p.test{
-  //   padding: 16px;
-  //   background-color: white;
-  // }
-  
-
  /* 產品文字區 */ 
 .sticky-wrap{
     position: relative;
     padding: 40px;
     width: 50%;
+
+    @include mobile{
+      width: 100%;
+    }
   }
 
 
@@ -77,7 +83,7 @@
   padding-bottom: 20px;
 }
 
-.product__aromaTag{
+.aromaTag{
   display: inline-block;
   padding: 5px;
   color: #6db4bb;
@@ -213,6 +219,250 @@
   }
 }
 
+// 黃白鮮花樹枝
+.section__middle__first{
+  position: relative;
+  background-image: url("https://cdn.greenvines.com.tw/shopline/auscentic/product-page/auscentic-body-serum-awakening-grace/a-kv.png");
+  background-size: cover;
+  margin-top: 300px;
+  padding: 160px 0px;
+
+  .leaves{
+      position: absolute;
+      right: 0;
+      top: -200px;
+      width: 750px;
+  }
+
+  .middle-text{
+    font-size: 38px;
+    font-weight: 100;
+    width: 50%;
+    margin: 0 auto;
+
+    p:nth-child(2){
+      font-weight: 400;
+    }
+
+    p:nth-child(3){
+      font-size: 24px;
+      font-weight: 400;
+    }
+  }
+
+  .tree{
+    position: absolute;
+    left: 0;
+    top: 50%;
+    max-width: 1920px;
+
+  }
+
+}
+
+// 淺藍色活性精華時代
+.section__middle__second{
+  padding: 200px 120px;
+
+  @include pad{
+    padding: 100px 60px;
+   }
+
+  .container{
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: $blue;
+    padding: 50px;
+    color: white;
+    text-align: center;
+  }
+
+  h3{
+    font-size: 24px;
+    font-weight: 400;
+  }
+
+  p{
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: 100;
+    line-height: 28px;
+  }
+}
+
+// 石頭
+.section__middle__third{
+  position: relative;
+
+  .rock{
+    position: absolute;
+    left: 0;
+    top: -215px;
+  }
+
+  .container{
+    display: flex;
+    margin: 0 auto;
+
+    @include pad{
+      flex-direction: column;
+     }
+
+  }
+
+  .description{
+    width: 50%;
+    color: #353535;
+    padding: 120px 60px;
+    
+    @include pad{
+      width: 100%;
+     }
+
+    
+    h3{
+      font-size: 26px;
+      font-weight: 100;
+    }
+
+    h5{
+      margin-top: 10px;
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    p{
+      font-size: 16px;
+      line-height: 28px;
+      font-weight: 100;
+    }
+
+    .title-bottombar{
+      border-bottom: 1px solid #353535;
+      margin-top: 30px;
+      margin-bottom: 30px;
+    }
+
+    }
+
+  .image{
+      background-image: url("https://cdn.greenvines.com.tw/shopline/auscentic/product-page/auscentic-body-serum-awakening-grace/a-s3-p1.jpg");
+      background-size: cover;
+      background-position: center;
+      width: 50%;
+
+      @include pad{
+        width: 100%;
+        min-height: 500px;
+       }
+
+    }
+}
+
+
+// 手肘
+.section__middle__fourth{
+  .container{
+    display: flex;
+    background-color: #d2c8b1;
+    margin: 0 auto;
+
+    @include pad{
+      flex-direction: column;
+     }
+  }
+
+  .image{
+    background-image: url("https://cdn.greenvines.com.tw/shopline/auscentic/product-page/auscentic-body-serum-awakening-grace/a-s3-p2.png");
+    background-size: cover;
+    background-position: center;
+    width: 50%;
+
+    @include pad{
+      width: 100%;
+      min-height: 500px;
+     }
+  }
+
+  .description{
+    width: 50%;
+    color: #353535;
+    padding: 120px 60px;
+
+    @include pad{
+      width: 100%;
+     }
+  }
+
+  h3{
+    font-size: 26px;
+    font-weight: 100;
+  }
+
+  h5{
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  p{
+    font-size: 16px;
+    line-height: 28px;
+    font-weight: 100;
+  }
+
+  .title-bottombar{
+    border-bottom: 1px solid #353535;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+
+}
+
+// 科學實測
+.section__middle__fifth{
+  background-color: #d2c8b1;
+  color: #353535;
+  text-align: center;
+  font-weight: 100;
+  padding: 80px 0;
+
+  h3{
+    font-size: 26px;
+    font-weight: 500;
+  }
+
+  h5{
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: 100;
+  }
+
+  .data-circle{
+    display: flex;
+    justify-content: space-between;
+    max-width: 50%;
+    margin: 0 auto;
+    padding: 60px 0px;
+
+    p{
+      margin-top: 20px;
+    }
+
+    @include pad{
+      max-width: 75%;
+      padding: 60px 0px;
+     }
+  }
+}
+
+.section__footer__bg{
+  background-color: #d2c8b1;
+
+  img{
+    width: 100%;
+  }
+}
 .news{
   position: fixed;
   right: 0;
