@@ -2,7 +2,7 @@
 .menu-mobile{
     background-color: red;
     background-image: linear-gradient(to right,$dark_green 50%, $blue);
-    position: sticky;
+    position: fixed;
     width: 100%;
     z-index: 999;
     display: none;

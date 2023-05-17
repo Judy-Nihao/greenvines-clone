@@ -41,7 +41,7 @@ img {
 .menu-mobile {
   background-color: red;
   background-image: linear-gradient(to right, #012D18 50%, #6CB4BD);
-  position: sticky;
+  position: fixed;
   width: 100%;
   z-index: 999;
   display: none;
@@ -160,7 +160,8 @@ nav {
 }
 
 .wrapper {
-  position: relative;
+  position: fixed;
+  width: 100%;
   background-image: linear-gradient(to right, #012D18 50%, #6CB4BD);
   padding: 0px 30px;
   height: 54px;

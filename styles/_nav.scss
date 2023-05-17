@@ -7,15 +7,17 @@ nav{
 }
 
 .wrapper{
-    position: relative;
+    position: fixed;
+    width: 100%;
+    // position: relative;
     background-image: linear-gradient(to right,$dark_green 50%, $blue);
-    // background-color: $dark_green;
     padding: 0px 30px;
     height: 54px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    
     @include pad{
         display: none;
     }
