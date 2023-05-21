@@ -533,7 +533,7 @@ nav {
 }
 .product-img .photos {
   width: 100%;
-  margin-top: 100px;
+  margin-top: -453.40625px;
 }
 .product-img img {
   width: 100%;
@@ -699,7 +699,7 @@ nav {
 
 .section__middle__first {
   position: relative;
-  background-image: url("https://cdn.greenvines.com.tw/shopline/auscentic/product-page/auscentic-body-serum-awakening-grace/a-kv.png");
+  background-image: url("../img/middle-flower.png");
   background-size: cover;
   margin-top: 300px;
   padding: 160px 0px;
@@ -804,7 +804,7 @@ nav {
   margin-bottom: 30px;
 }
 .section__middle__third .image {
-  background-image: url("https://cdn.greenvines.com.tw/shopline/auscentic/product-page/auscentic-body-serum-awakening-grace/a-s3-p1.jpg");
+  background-image: url("../img/middle-bottle.jpg");
   background-size: cover;
   background-position: center;
   width: 50%;
@@ -827,7 +827,7 @@ nav {
   }
 }
 .section__middle__fourth .image {
-  background-image: url("https://cdn.greenvines.com.tw/shopline/auscentic/product-page/auscentic-body-serum-awakening-grace/a-s3-p2.png");
+  background-image: url("../img/middle-elbow.png");
   background-size: cover;
   background-position: center;
   width: 50%;
