@@ -9,7 +9,6 @@ nav{
 .wrapper{
     position: fixed;
     width: 100%;
-    // position: relative;
     background-image: linear-gradient(to right,$dark_green 50%, $blue);
     padding: 0px 30px;
     height: 54px;
@@ -17,13 +16,20 @@ nav{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 120px;
+    margin-right: 45px;
     @include pad{
         display: none;
     }
-}
+} 
 
-//navbar 左半邊含logo
+//navbar 左半邊
 .navbar__left{
     display: flex;
 
@@ -32,14 +38,6 @@ nav{
             display: none;
         }
     }
-
-    .logo{
-        display: flex;
-        align-items: center;
-        text-align: center;
-        width: 120px;
-        margin-right: 45px;
-    } 
 
     .nav-menu{       
         display: flex;
@@ -245,18 +243,12 @@ nav{
     display: flex;
     align-items: center;
     position: relative;
-    // right: 150%;
-    // top: 6px;
 
     span{
         color: white;
         font-size: 12px;
         letter-spacing: 1px;
         margin-left: 15px;
-    }
-
-    img{
-        // margin-right: 4px;
     }
 }
 
@@ -364,17 +356,103 @@ nav{
     }
 }
 
+.cart__wrapper{
+    @include pad{
+        display: block;
+    }
+}
+
+//購物車相關
 .navbar__right .side-menu .cart{
     position: relative;
     .cart__count{
         position: absolute;
         top: -10px;
         right: -12px;
-        background-color: #C84601;
+        background-color: grey;
         text-align: center;
         width: 18px;
         height: 18px;
         border-radius: 50%;
         font-size: 12px;
     }
+}
+
+
+.cart__item{
+    position: absolute;
+    width: 300px;
+    background-color: #9CABA2;
+    top: $header_height;
+    right: 0;
+    padding: 20px;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.25s linear;
+
+    .upper{
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+    }
+
+    h4{
+        font-size: 18px;
+        font-weight: 400;
+        color: $dark_green;
+    }
+
+    img{
+        width: 50px;
+    }
+
+    .delete__btn{
+        align-self: center;
+        transition: transform 0.25s ease-out;
+        &:hover{
+            transform: scale(0.9);
+            color: #C84601;
+        }
+    }
+    
+    i.bx{
+        font-size: 26px;
+        
+    }
+
+    &__sum{
+        color: $dark_green;
+        font-size: 14px;
+    }
+
+    &__price{
+        font-weight: 600;
+        span{
+            font-weight: 400;
+            color: $light_green;
+        }
+    }
+
+    &__checkout{
+        background-color: #C84601;
+        color: white;
+        text-align: center;
+        font-size: 14px;
+        padding: 4px 0;
+        margin-top: 10px;
+        transition: font-size 0.1s ease-out;
+
+        &:hover{
+            font-size: 16px;
+        }
+
+        &:active{
+            transform: scale(0.9);
+        }
+    }
+}
+
+.cart__item.active{
+    visibility: visible;
+    opacity: 1;
 }

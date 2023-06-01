@@ -1,15 +1,12 @@
 // 麵包屑路徑頁籤
 .breadcrumb{
-    @include pad{
-        display: none;
-    }
-
     background-color: $light_green;
     color: white;
     line-height: 1;
     padding: 0px 30px;
     font-weight: 300;
     font-size: 14px;
+    padding-top: $header_height;
    
     &__list{
         display: flex;
