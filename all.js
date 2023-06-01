@@ -20,15 +20,16 @@ const overlay = document.querySelector(".overlay");
 
 //行動版漢堡選單點擊
 menuMobileBtn.addEventListener("click", ()=>{
-    
+    document.body.classList.toggle('no-scroll');
+
     if(menuMobileMain.classList.contains('active')){
         menuMobileMain.classList.remove("active");
     }else{
         menuMobileMain.classList.add("active");
     }
 
-    document.body.classList.toggle('no-scroll');
-    cartItem.classList.toggle("active");
+    cartItem.classList.remove("active");
+    overlay.classList.remove("active"); //頁面透黑色遮蓋
 
 })
 
@@ -68,7 +69,7 @@ addToCart.addEventListener("click", ()=>{
     cartQuantity.textContent = cartIconCount.textContent;
 
     if(parseInt(cartIconCount.textContent) > 0){
-        cartIconCount.style.backgroundColor = "#C84601";
+        cartIconCount.style.backgroundColor = "#C84601"; //數量大於0時數字背景變橘紅色
     }
 })
 
@@ -86,9 +87,19 @@ cartIcon.addEventListener("click", ()=>{
             item.style.opacity = 1;
         });
 
-        overlay.classList.toggle("active"); //頁面透黑色遮蓋
+        //頁面透黑色遮蓋
+        if(overlay.classList.contains('active')){
+            overlay.classList.remove("active");
+        }else{
+            overlay.classList.add("active");
+        };
+        
+        //購物車清單點擊顯示時，漢堡遠單就要隱藏，body恢復可以捲動
+        if(menuMobileMain.classList.contains('active')){
+            menuMobileMain.classList.remove("active");
+            document.body.classList.toggle('no-scroll');
+        };
     }
-
 })
 
 //點擊購物車產品刪除按鈕
@@ -99,7 +110,13 @@ deleteBtn.addEventListener("click", ()=>{
     array.forEach(item=>{
         item.style.opacity = 0;
     });
-    overlay.classList.toggle("active"); //頁面透黑色遮蓋
+
+    if(overlay.classList.contains('active')){
+        overlay.classList.remove("active"); //頁面透黑色遮蓋
+    }else{
+        overlay.classList.add("active");
+    }
+    
     cartIconCount.style.backgroundColor = "grey";
 });
 
