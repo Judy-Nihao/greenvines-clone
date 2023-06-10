@@ -37,8 +37,6 @@
 .menu-mobile-main{
     visibility: hidden;
     opacity: 0;
-    
-
 
     position: fixed;
     top: $header_height;
@@ -70,14 +68,47 @@
         opacity: 1;
     }
 
-    
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     transform: translateX(0px);
-
 }
 
+//行動版 menu 選單項目
+.menu-mobile-main__nav__item:first-child{
+
+    .sub-menu{
+        position: absolute;
+        top: 0;
+        left: -100px;
+        width: 100%;
+        height: 100%;
+        font-size: 15px;
+        background-color: $light_green;
+        visibility: hidden;
+        opacity: 0;
+        transition: all 0.15s linear;
+
+        &.active{
+            left: 0;
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+
+    .sub-menu-item{
+        padding: 5px 25px;
+    }
+
+    .arrow{
+        background-color: transparent;
+        border: none;
+        color: white;
+        cursor: pointer;
+        font-size: 32px;
+        margin-bottom: 20px;
+    }
+}
 
 // 行動版 menu footer
 .menu-mobile-main__footer{

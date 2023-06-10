@@ -16,7 +16,8 @@ const cartItem = document.querySelector(".cart__item");
 const cartQuantity = document.querySelector(".cart__item__quantity");
 const deleteBtn = document.querySelector(".delete__btn");
 const overlay = document.querySelector(".overlay");
-
+const subMenu = menuMobileMain.querySelector(".sub-menu");
+const arrow = menuMobileMain.querySelector(".arrow");
 
 //行動版漢堡選單點擊
 menuMobileBtn.addEventListener("click", ()=>{
@@ -31,6 +32,17 @@ menuMobileBtn.addEventListener("click", ()=>{
     cartItem.classList.remove("active");
     overlay.classList.remove("active"); //頁面透黑色遮蓋
 
+})
+
+//行動版選單項目點擊
+menuMobileMain.addEventListener("click", (e) => {
+    if(e.target.tagName == "A"){
+        subMenu.classList.add("active");
+    }
+})
+
+arrow.addEventListener("click", () => {
+    subMenu.classList.remove("active");
 })
 
 
@@ -72,7 +84,6 @@ addToCart.addEventListener("click", ()=>{
         cartIconCount.style.backgroundColor = "#C84601"; //數量大於0時數字背景變橘紅色
     }
 })
-
 
 
 //點擊購物車 icon：當選購數字大於0時才顯示購物車清單

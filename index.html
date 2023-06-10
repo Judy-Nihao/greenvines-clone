@@ -14,7 +14,7 @@
 </head>
 <body>
     <div class="overlay"></div>
-    <nav>
+    <nav id="nav">
         <div class="wrapper">
             <!-- 以下行動版menu -->
             <div class="menu__mobile">
@@ -28,7 +28,15 @@
                 </div>
                 <div class="menu-mobile-main">
                     <ul class="menu-mobile-main__nav">
-                        <li class="menu-mobile-main__nav__item"><a href="#">母親節優惠專區</a></li>
+                        <li class="menu-mobile-main__nav__item" id="menu-mobile-main__nav__item"><a href="#">最新提案</a>
+                            <ul class="sub-menu" id="sub-menu">
+                                <li class="sub-menu-item"><button class="arrow">←</button></li>
+                                <li class="sub-menu-item"><a href="#sub-menu">只到 5/16｜母親節優惠到數中</a></li>
+                                <li class="sub-menu-item"><a href="#sub-menu">新品補貨到｜把握最佳優惠</a></li>
+                                <li class="sub-menu-item"><a href="#sub-menu">新註冊綁定｜現折 $150</a></li>
+                                <li class="sub-menu-item"><a href="#sub-menu">12 家門市｜邀您現場體驗新品</a></li>
+                            </ul>
+                        </li>
                         <li class="menu-mobile-main__nav__item"><a href="#">所有產品</a></li>
                         <li class="menu-mobile-main__nav__item"><a href="#">臉部</a></li>
                         <li class="menu-mobile-main__nav__item"><a href="#">頭髮</a></li>
@@ -332,7 +340,7 @@
                         <div class="upper">
                             <h4>花時間護膚蜜</h4>
                             <img src="img/cart-product-img.webp" alt="">
-                            <span class="delete__btn"><i class='bx bx-x'></i></span>
+                            <span class="delete__btn"><i class='bx bx-trash'></i></span>
                         </div>
                         <div class="cart__item__sum">
                             <span class="cart__item__quantity">1</span>
